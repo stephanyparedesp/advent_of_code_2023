@@ -1,2 +1,2 @@
-# Solutions to my Adcent of Code 2023
+# Solutions to my Advent of Code 2023
 
