@@ -26,9 +26,7 @@ def find_patterns(pattern, lines):
 number_list = find_patterns(pattern_numbers, lines)
 pattern_list = find_patterns(pattern_special, lines)
 
-# Check for part numbers
 part_numbers = []
-
 for line_number, items in number_list.items():
     # For every number in that line, check if part
     for item in items:
@@ -39,17 +37,14 @@ for line_number, items in number_list.items():
 
         # Adjust for when line is last and first
         if line_number != 0:
-            # Special character lines in nearness
             line_above = pattern_list[line_number - 1]
         else:
             line_above = []
         line_same = pattern_list[line_number]
-
         if line_number != list(number_list.keys())[-1]:
             line_below = pattern_list[line_number + 1]
         else:
             line_below = []
-
         for l in [line_above, line_below, line_same]:
             # if line not empty and not yet classified as part
             if len(l) > 0 and not is_part_number:
@@ -61,15 +56,10 @@ for line_number, items in number_list.items():
             part_numbers.append(number)
 
 print(sum(part_numbers))
-
 # %% Part 2
-
-fn = "data.txt"
 lines = open(fn).read().split("\n")
-
 gear_pattern = r"[*]"
 gears = find_patterns(gear_pattern, lines)
-
 gear_values = []
 
 for line_number, items in gears.items():
@@ -77,8 +67,6 @@ for line_number, items in gears.items():
         for item in items:
             gear_nums = []
             pos_char = item[1]
-
-            # ....................
             # Adjust for when line is last and first
             if line_number != 0:
                 # Special character lines in nearness
@@ -93,7 +81,6 @@ for line_number, items in gears.items():
             else:
                 line_below = []
 
-            # ....................
             for l in [line_above, line_below, line_same]:
                 if len(l) > 0:
                     for tuple_number in l:
