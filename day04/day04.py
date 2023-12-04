@@ -12,11 +12,8 @@ for line in lines:
     # Card matches
     matches = set(elf_numbers).intersection(set(winning_numbers))
     # Lets give the score
-    if len(matches) > 1:
+    if len(matches) >= 1:
         score = 2 ** (len(matches) - 1)
-    elif len(matches) == 1:
-        score = 1
-
     all_scores.append(score)
 print(sum(all_scores))
 
