@@ -49,4 +49,4 @@ for n in start:
 
     all_steps.append(steps)
 
-print(np.lcm.reduce(all_steps))  # Calculated lcm in wolfram :)
+print(np.lcm.reduce(all_steps))
