@@ -1,5 +1,4 @@
-from math import lcm
-
+import numpy as np
 from cycler import cycle
 
 fn = "data.txt"
@@ -50,4 +49,4 @@ for n in start:
 
     all_steps.append(steps)
 
-print(all_steps)  # Calculated lcm in wolfram :)
+print(np.lcm.reduce(all_steps))  # Calculated lcm in wolfram :)
